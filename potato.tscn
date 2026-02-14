@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://ogri85xrmohf" path="res://Scripts/potato.gd" id="1_ybd78"]
 [ext_resource type="Texture2D" uid="uid://o8vhskg4jpji" path="res://assets/patates_sprite_sheet.png" id="2_ybd78"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
-size = Vector2(32, 21)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6f1xa"]
 atlas = ExtResource("2_ybd78")
 region = Rect2(0, 0, 32, 32)
@@ -57,12 +54,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
+size = Vector2(32, 21)
+
 [node name="potato" type="Area2D"]
 script = ExtResource("1_ybd78")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 0.5)
-shape = SubResource("RectangleShape2D_8dirm")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -71,3 +67,7 @@ sprite_frames = SubResource("SpriteFrames_5wy20")
 animation = &"tarla"
 frame_progress = 0.7818169
 speed_scale = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0.5)
+shape = SubResource("RectangleShape2D_8dirm")
