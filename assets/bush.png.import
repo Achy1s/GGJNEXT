@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o8vhskg4jpji"
-path="res://.godot/imported/patates_sprite_sheet.png-cd89e234ded45680dc8c021526167736.ctex"
+uid="uid://bnkxbcpdhdif7"
+path="res://.godot/imported/bush.png-be9d794f71fc1341282f91f838b46f45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/patates_sprite_sheet.png"
-dest_files=["res://.godot/imported/patates_sprite_sheet.png-cd89e234ded45680dc8c021526167736.ctex"]
+source_file="res://assets/bush.png"
+dest_files=["res://.godot/imported/bush.png-be9d794f71fc1341282f91f838b46f45.ctex"]
 
 [params]
 

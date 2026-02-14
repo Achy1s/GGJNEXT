@@ -1,9 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpfjv8pf3lpgn"]
+[gd_scene load_steps=9 format=3 uid="uid://dpfjv8pf3lpgn"]
 
 [ext_resource type="Script" uid="uid://182bmn31pv" path="res://blueberry.gd" id="1_0l8em"]
+[ext_resource type="Texture2D" uid="uid://bnkxbcpdhdif7" path="res://assets/bush.png" id="2_bw5qf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
-size = Vector2(32, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a6b4"]
+atlas = ExtResource("2_bw5qf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro10c"]
+atlas = ExtResource("2_bw5qf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xge2c"]
+atlas = ExtResource("2_bw5qf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akyym"]
+atlas = ExtResource("2_bw5qf")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0l8em"]
 animations = [{
@@ -12,7 +26,10 @@ animations = [{
 "name": &"jam",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a6b4")
+}],
 "loop": true,
 "name": &"kilitli",
 "speed": 5.0
@@ -22,21 +39,34 @@ animations = [{
 "name": &"pancake",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro10c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xge2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akyym")
+}],
 "loop": true,
 "name": &"tarla",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
+size = Vector2(32, 21)
+
 [node name="blueberry" type="Area2D"]
 script = ExtResource("1_0l8em")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9, -5)
+sprite_frames = SubResource("SpriteFrames_0l8em")
+animation = &"kilitli"
+speed_scale = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, 0.5)
 shape = SubResource("RectangleShape2D_8dirm")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_0l8em")
-animation = &"pancake"
-speed_scale = 0.3
