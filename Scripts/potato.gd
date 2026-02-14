@@ -5,6 +5,8 @@ var level: int = 0
 var point: int = 0
 var max_level: int = 3
 
+var animations = ["kilitli", "tarla", "haslama", "kumpir"]
+
 func get_level_up_cost() -> int:
 	if level == 0:
 		return 75
@@ -17,9 +19,19 @@ func _ready():
 	timer.one_shot = false
 	timer.timeout.connect(_on_timer_timeout)
 	
+	update_visuals()
+
+func update_visuals():
+	var anim_name = animations[level]
+	
+	if $Sprite.sprite_frames.has_animation(anim_name):
+		$Sprite.play(anim_name)
+	
 	if level == 0:
 		modulate = Color(0.3, 0.3, 0.3, 0.8)
 		print("Patates kilitli! Açmak için sağ tıkla.")
+	else:
+		modulate = Color(1, 1, 1, 1)
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -36,10 +48,9 @@ func level_up():
 		GameManager.score -= cost
 		level += 1
 		point = level * 3 
+		update_visuals()
 		if level == 1:
-			modulate = Color(1, 1, 1, 1) 
 			timer.start()
-			$pidle1.play("new_animation")
 			print("Patates açıldı! Üretim başladı.")
 		
 		print("Patates Seviye Atladı! Seviye: ", level, " | Puan: ", point)
