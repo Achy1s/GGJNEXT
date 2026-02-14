@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpfjv8pf3lpgn"]
+
+[ext_resource type="Script" uid="uid://182bmn31pv" path="res://blueberry.gd" id="1_0l8em"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
+size = Vector2(32, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0l8em"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"jam",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"kilitli",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"pancake",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"tarla",
+"speed": 5.0
+}]
+
+[node name="blueberry" type="Area2D"]
+script = ExtResource("1_0l8em")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0.5)
+shape = SubResource("RectangleShape2D_8dirm")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0l8em")
+animation = &"pancake"
+speed_scale = 0.3

@@ -1,38 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhfhva0ur755x"]
+[gd_scene load_steps=4 format=3 uid="uid://bhfhva0ur755x"]
 
 [ext_resource type="Script" uid="uid://ogri85xrmohf" path="res://Scripts/potato.gd" id="1_ybd78"]
-[ext_resource type="Texture2D" uid="uid://o8vhskg4jpji" path="res://assets/patates_sprite_sheet.png" id="2_ybd78"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
-size = Vector2(32, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6f1xa"]
-atlas = ExtResource("2_ybd78")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rx63k"]
-atlas = ExtResource("2_ybd78")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybd78"]
-atlas = ExtResource("2_ybd78")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8dirm"]
-atlas = ExtResource("2_ybd78")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5wy20"]
 animations = [{
 "frames": [],
 "loop": true,
-"name": &"haslama",
+"name": &"french",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6f1xa")
-}],
+"frames": [],
 "loop": true,
 "name": &"kilitli",
 "speed": 5.0
@@ -42,32 +19,25 @@ animations = [{
 "name": &"kumpir",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rx63k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ybd78")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8dirm")
-}],
+"frames": [],
 "loop": true,
 "name": &"tarla",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
+size = Vector2(32, 21)
+
 [node name="potato" type="Area2D"]
 script = ExtResource("1_ybd78")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 0.5)
-shape = SubResource("RectangleShape2D_8dirm")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(9, -5)
 sprite_frames = SubResource("SpriteFrames_5wy20")
-animation = &"tarla"
-frame_progress = 0.7818169
+animation = &"kumpir"
 speed_scale = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 0.5)
+shape = SubResource("RectangleShape2D_8dirm")
