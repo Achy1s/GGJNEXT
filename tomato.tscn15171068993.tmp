@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://blqlfryyw3ur"]
+
+[ext_resource type="Texture2D" uid="uid://c1q1fmse13e2t" path="res://beyaz.jpg" id="1_ajaoc"]
+[ext_resource type="Script" uid="uid://e6xbxdl7e6xw" path="res://Scripts/tomato.gd" id="1_joa5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajaoc"]
+
+[node name="Tomato" type="Area2D"]
+script = ExtResource("1_joa5w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ajaoc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.3841858e-07, -7.1525574e-07)
+scale = Vector2(0.018181818, 0.018181818)
+texture = ExtResource("1_ajaoc")

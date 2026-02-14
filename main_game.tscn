@@ -1,3 +1,103 @@
-[gd_scene format=3 uid="uid://c1efg6f0xcurm"]
+<<<<<<< HEAD
+[gd_scene load_steps=5 format=3 uid="uid://c1efg6f0xcurm"]
+
+[ext_resource type="PackedScene" uid="uid://blqlfryyw3ur" path="res://tomato.tscn" id="1_1oj5k"]
+[ext_resource type="Script" uid="uid://14ga3q8my0py" path="res://Scripts/score_label.gd" id="2_yx7mw"]
+
+[sub_resource type="FontFile" id="FontFile_yx7mw"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/46/0/ascent = 0.0
+cache/0/46/0/descent = 0.0
+cache/0/46/0/underline_position = 0.0
+cache/0/46/0/underline_thickness = 0.0
+cache/0/46/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/61/0/ascent = 0.0
+cache/0/61/0/descent = 0.0
+cache/0/61/0/underline_position = 0.0
+cache/0/61/0/underline_thickness = 0.0
+cache/0/61/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/71/0/ascent = 0.0
+cache/0/71/0/descent = 0.0
+cache/0/71/0/underline_position = 0.0
+cache/0/71/0/underline_thickness = 0.0
+cache/0/71/0/scale = 1.0
+cache/0/76/0/ascent = 0.0
+cache/0/76/0/descent = 0.0
+cache/0/76/0/underline_position = 0.0
+cache/0/76/0/underline_thickness = 0.0
+cache/0/76/0/scale = 1.0
+cache/0/81/0/ascent = 0.0
+cache/0/81/0/descent = 0.0
+cache/0/81/0/underline_position = 0.0
+cache/0/81/0/underline_thickness = 0.0
+cache/0/81/0/scale = 1.0
+cache/0/86/0/ascent = 0.0
+cache/0/86/0/descent = 0.0
+cache/0/86/0/underline_position = 0.0
+cache/0/86/0/underline_thickness = 0.0
+cache/0/86/0/scale = 1.0
+cache/0/91/0/ascent = 0.0
+cache/0/91/0/descent = 0.0
+cache/0/91/0/underline_position = 0.0
+cache/0/91/0/underline_thickness = 0.0
+cache/0/91/0/scale = 1.0
+cache/0/96/0/ascent = 0.0
+cache/0/96/0/descent = 0.0
+cache/0/96/0/underline_position = 0.0
+cache/0/96/0/underline_thickness = 0.0
+cache/0/96/0/scale = 1.0
+cache/0/101/0/ascent = 0.0
+cache/0/101/0/descent = 0.0
+cache/0/101/0/underline_position = 0.0
+cache/0/101/0/underline_thickness = 0.0
+cache/0/101/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ykeeq"]
+font = SubResource("FontFile_yx7mw")
+font_size = 100
+=======
+[gd_scene format=3 uid="uid://clpfiqngsq8nq"]
+>>>>>>> dd5db42bff67d792451096f6c5da4120258d1aa5
 
 [node name="MainGame" type="Node2D"]
+
+[node name="Tomato" parent="." instance=ExtResource("1_1oj5k")]
+position = Vector2(289, 192)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_right = 58.0
+offset_bottom = 23.0
+text = "Puan: 0"
+label_settings = SubResource("LabelSettings_ykeeq")
+script = ExtResource("2_yx7mw")
