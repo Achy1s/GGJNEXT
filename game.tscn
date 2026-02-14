@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7y84xb3kj2q3"]
+
+[ext_resource type="PackedScene" uid="uid://blqlfryyw3ur" path="res://tomato.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://3b81a4go33u3" path="res://Scripts/score_label.gd" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bhfhva0ur755x" path="res://potato.tscn" id="2_feb5d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Tomato" parent="." instance=ExtResource("1_80nbo")]
+position = Vector2(809, 548)
+scale = Vector2(5, 5)
+
+[node name="potato" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(509, 548)
+scale = Vector2(5, 5)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+text = "Puan: 0"
+script = ExtResource("2_e2o6t")

@@ -9,6 +9,9 @@ func get_level_up_cost() -> int:
 	return 30 * level
 
 func _ready():
+	if level == 1:
+		$idlelevel1.play("new_animation")
+	
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 10.0
@@ -18,11 +21,13 @@ func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
-func _input_event(_viewport, event, _shape_idx):
+func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			speed_up(1.0)
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
+func _input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
 			if level < max_level:
 				level_up()
 
@@ -30,7 +35,6 @@ func speed_up(miktar: float):
 	if timer.is_stopped(): return
 	
 	var new_time = timer.time_left - miktar
-	
 	if new_time <= 0.05:
 		_on_timer_timeout()
 		timer.start(10.0)
@@ -45,6 +49,7 @@ func level_up():
 		level += 1
 		point = (level * 2) - 1
 		print("Seviye atladı! Yeni Seviye: ", level, " | Yeni Puan: ", point)
+		# Burada yeni seviye animasyonunu tetikleyebilirsin
 	else:
 		print("Yetersiz puan! Gereken: ", cost)
 
