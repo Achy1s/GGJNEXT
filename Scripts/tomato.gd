@@ -14,7 +14,7 @@ func _ready():
 	
 	timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 10.0
+	timer.wait_time = 5.0
 	timer.one_shot = false
 	timer.autostart = true
 	
