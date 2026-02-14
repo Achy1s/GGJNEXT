@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://shydh604mm5a" path="res://corn.gd" id="1_tbhtn"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5wy20"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
+size = Vector2(32, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vesfp"]
 animations = [{
 "frames": [],
 "loop": true,
@@ -25,19 +28,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dirm"]
-size = Vector2(32, 21)
-
 [node name="corn" type="Area2D"]
 script = ExtResource("1_tbhtn")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(9, -5)
-sprite_frames = SubResource("SpriteFrames_5wy20")
-animation = &"kpopcorn"
-speed_scale = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, 0.5)
 shape = SubResource("RectangleShape2D_8dirm")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vesfp")
+animation = &"kpopcorn"
+speed_scale = 0.3

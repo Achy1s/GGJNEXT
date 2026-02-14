@@ -5,12 +5,18 @@ var level: int = 1
 var point: int = 1
 var max_level: int = 3
 var level_animations = ["tarla", "stand", "menemen"]
+var click_level: int = 1
+var click_power: float = 1.0
 
 func get_level_up_cost() -> int:
 	return 30 * level
 
+func get_click_upgrade_cost() -> int:
+	return 100 * click_level
+
 func _ready():
 	update_visuals()
+	get_node("../UI/Button").pressed.connect(_on_upgrade_button_pressed)
 	
 	timer = Timer.new()
 	add_child(timer)
@@ -61,3 +67,15 @@ func level_up():
 func _on_timer_timeout():
 	GameManager.score += point
 	print("Hasat yapıldı! +", point, " Toplam: ", GameManager.score)
+
+func _on_upgrade_button_pressed():
+	var cost = get_click_upgrade_cost()
+	
+	if GameManager.score >= cost:
+		GameManager.score -= cost
+		click_level += 1
+		click_power += 0.5
+		
+		print("Tıklama gücü arttı! Yeni Güç: ", click_power)
+	else:
+		print("Yetersiz puan! Gereken: ", cost)

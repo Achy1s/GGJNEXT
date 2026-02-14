@@ -5,7 +5,7 @@ var level: int = 0
 var point: int = 0
 var max_level: int = 3
 
-var animations = ["kilitli", "tarla", "haslama", "kumpir"]
+var animations = ["kilitli", "tarla", "french", "kumpir"]
 
 func get_level_up_cost() -> int:
 	if level == 0:
