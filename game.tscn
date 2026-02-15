@@ -1,18 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7y84xb3kj2q3"]
+[gd_scene load_steps=6 format=3 uid="uid://b7y84xb3kj2q3"]
 
 [ext_resource type="PackedScene" uid="uid://blqlfryyw3ur" path="res://tomato.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://3b81a4go33u3" path="res://Scripts/score_label.gd" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bhfhva0ur755x" path="res://potato.tscn" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://cbtrp4u5ag5lc" path="res://assets/cursor.png" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dpfjv8pf3lpgn" path="res://blueberry.tscn" id="5_7jktm"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Tomato" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(809, 548)
+position = Vector2(469.00003, 877)
 scale = Vector2(5, 5)
 
 [node name="potato" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(509, 548)
+position = Vector2(209.00003, 875)
 scale = Vector2(5, 5)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -40,3 +41,7 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="blueberry" parent="." instance=ExtResource("5_7jktm")]
+position = Vector2(707.00006, 888.00006)
+scale = Vector2(5, 5)

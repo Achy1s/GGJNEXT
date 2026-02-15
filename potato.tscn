@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ogri85xrmohf" path="res://Scripts/potato.gd" id="1_ybd78"]
 [ext_resource type="Texture2D" uid="uid://b3echpbimse4h" path="res://assets/kzartma.png" id="2_8dirm"]
-[ext_resource type="Texture2D" uid="uid://o8vhskg4jpji" path="res://assets/patates_sprite_sheet.png" id="2_ybd78"]
+[ext_resource type="Texture2D" uid="uid://brqrpwofgwb78" path="res://assets/patates_sprite_sheet.png" id="2_ybd78"]
 [ext_resource type="Texture2D" uid="uid://cqasmnlaph4yu" path="res://assets/kumpir.png" id="4_6f1xa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bv5ge"]
@@ -21,7 +21,7 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_8dirm")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u4ued"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dirm"]
 atlas = ExtResource("2_ybd78")
 region = Rect2(0, 0, 32, 32)
 
@@ -37,15 +37,15 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("4_6f1xa")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_25yj2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f1xa"]
 atlas = ExtResource("2_ybd78")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0klov"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ued"]
 atlas = ExtResource("2_ybd78")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_51kdu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_25yj2"]
 atlas = ExtResource("2_ybd78")
 region = Rect2(64, 0, 32, 32)
 
@@ -70,7 +70,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u4ued")
+"texture": SubResource("AtlasTexture_8dirm")
 }],
 "loop": true,
 "name": &"kilitli",
@@ -92,13 +92,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6f1xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4ued")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_25yj2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0klov")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_51kdu")
 }],
 "loop": true,
 "name": &"tarla",
@@ -115,9 +115,7 @@ script = ExtResource("1_ybd78")
 texture_filter = 1
 position = Vector2(9, -5)
 sprite_frames = SubResource("SpriteFrames_5wy20")
-animation = &"french"
-frame = 3
-frame_progress = 0.28578997
+animation = &"kilitli"
 speed_scale = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
