@@ -60,4 +60,37 @@ func level_up():
 func _on_timer_timeout():
 	if level > 0:
 		GameManager.score += point
-		print("Patates puanı eklendi: +", point, " Toplam: ", GameManager.score)
+		show_floating_point(point) # Bu satırı ekledik
+		print("Domates puanı eklendi: +", point, " Toplam: ", GameManager.score)
+		
+func show_floating_point(amount: int):
+	var sprite = Sprite2D.new()
+	
+	# Texture'ı yükle
+	sprite.texture = load("res://art/puan_" + str(amount) + ".png")
+	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	add_child(sprite)
+	
+	# --- RASTGELE SAPMA (RANDOM OFFSET) EKLEME ---
+	# Yatayda -25 ile +25 pixel arası rastgele bir sapma ekler
+	var random_x = randf_range(-25.0, 25.0)
+	sprite.position = Vector2(random_x, -20) 
+	# ---------------------------------------------
+
+	sprite.z_index = 10
+	# Sayıların birbirinin aynısı durmaması için hafif bir rastgele rotasyon da ekleyebilirsin
+	sprite.rotation_degrees = randf_range(-15.0, 15.0)
+
+	var tween = create_tween()
+	tween.set_parallel(true)
+	
+	# Yukarı kayarken aynı zamanda rastgele yana doğru da hafifçe süzülsün
+	var target_pos = Vector2(sprite.position.x + (random_x * 0.5), sprite.position.y - 60)
+	
+	tween.tween_property(sprite, "position", target_pos, 1.2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(sprite, "modulate:a", 0.0, 1.2)
+	# Hafif büyüme efekti (Opsiyonel)
+	sprite.scale = Vector2(0.5, 0.5)
+	tween.tween_property(sprite, "scale", Vector2(1.2, 1.2), 0.2)
+	
+	tween.chain().tween_callback(sprite.queue_free)

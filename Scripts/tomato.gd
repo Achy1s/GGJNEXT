@@ -87,6 +87,7 @@ func show_floating_point(amount: int):
 	
 	# Texture'ı yükle
 	sprite.texture = load("res://assets/puan_" + str(amount) + ".png")
+	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	add_child(sprite)
 	
 	# --- RASTGELE SAPMA (RANDOM OFFSET) EKLEME ---
