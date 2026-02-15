@@ -3,7 +3,7 @@ extends Node
 var score: int = 0
 var is_double_score: bool = false
 var bonus_timer: Timer
-var bonus_cost: int = 200
+var bonus_cost: int = 50
 
 func _ready():
 	print("SİSTEM: GameManager Hazır!") # Bu yazı oyun açılınca çıkmalı

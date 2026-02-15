@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfn4sw48b78tv"]
+[gd_scene load_steps=6 format=3 uid="uid://dfn4sw48b78tv"]
 
 [ext_resource type="Texture2D" uid="uid://qthxrpw3udxw" path="res://assets/open.png" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://d2je5qxspf6ow" path="res://assets/play_button.png" id="2_glbon"]
 [ext_resource type="Script" uid="uid://dniji1auhq22n" path="res://play.gd" id="3_fu7sn"]
 [ext_resource type="Script" uid="uid://gd7xi6iojd8w" path="res://quit.gd" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://ij4db2t1vkkk" path="res://assets/quit_button.png" id="4_nlkkf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,15 +18,26 @@ position = Vector2(963, 537)
 scale = Vector2(4.825, 3.9629629)
 texture = ExtResource("1_06t4h")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="play" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="play" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+offset_left = 844.00006
+offset_top = 53.000004
+offset_right = 884.00006
+offset_bottom = 93.0
+scale = Vector2(13, 13)
+icon = ExtResource("2_glbon")
+flat = true
 script = ExtResource("3_fu7sn")
 
-[node name="quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="quit" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1304.0001
+offset_top = 548.0
+offset_right = 1344.0001
+offset_bottom = 588.0
+scale = Vector2(15, 15)
+icon = ExtResource("4_nlkkf")
+flat = true
 script = ExtResource("4_jix8l")

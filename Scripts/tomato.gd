@@ -9,10 +9,10 @@ var click_level: int = 1
 var click_power: float = 1.0
 
 func get_level_up_cost() -> int:
-	return 30 * level
+	return 15 * level
 
 func get_click_upgrade_cost() -> int:
-	return 100 * click_level
+	return 50 * click_level
 
 func _ready():
 	update_visuals()

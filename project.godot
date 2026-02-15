@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJSEX"
-run/main_scene="uid://b7y84xb3kj2q3"
+run/main_scene="uid://dfn4sw48b78tv"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

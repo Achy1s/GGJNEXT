@@ -9,8 +9,8 @@ var animations = ["kilitli", "tarla", "stand", "menemen"]
 
 func get_level_up_cost() -> int:
 	if level == 0:
-		return 50
-	return 30 * level
+		return 30
+	return 15 * level
 
 func _ready():
 	timer = Timer.new()

@@ -159,7 +159,7 @@ texture_filter = 1
 position = Vector2(8, -3)
 sprite_frames = SubResource("SpriteFrames_vesfp")
 animation = &"tarla"
-frame_progress = 0.37370524
+frame_progress = 0.9171473
 speed_scale = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
