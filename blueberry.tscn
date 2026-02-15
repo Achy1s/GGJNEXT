@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dpfjv8pf3lpgn"]
 
-[ext_resource type="Script" uid="uid://182bmn31pv" path="res://blueberry.gd" id="1_0l8em"]
+[ext_resource type="Script" uid="uid://182bmn31pv" path="res://Scripts/blueberry.gd" id="1_0l8em"]
 [ext_resource type="Texture2D" uid="uid://bdykhsnd3ogeb" path="res://assets/jars.png" id="2_5a6b4"]
 [ext_resource type="Texture2D" uid="uid://bnkxbcpdhdif7" path="res://assets/bush.png" id="2_bw5qf"]
 [ext_resource type="Texture2D" uid="uid://bln8u5a2r7ug1" path="res://assets/blueberrysaksi.png" id="3_ro10c"]

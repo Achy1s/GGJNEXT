@@ -5,17 +5,17 @@ var level: int = 0
 var point: int = 0
 var max_level: int = 3
 
-var animations = ["kilitli", "tarla", "jam", "pancake"]
+var animations = ["kilitli", "tarla", "stand", "menemen"]
 
 func get_level_up_cost() -> int:
 	if level == 0:
-		return 100
-	return 75 * level
+		return 50
+	return 30 * level
 
 func _ready():
 	timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 10.0
+	timer.wait_time = 5.0
 	timer.one_shot = false
 	timer.timeout.connect(_on_timer_timeout)
 	
@@ -29,7 +29,7 @@ func update_visuals():
 	
 	if level == 0:
 		modulate = Color(0.3, 0.3, 0.3, 0.8)
-		print("Patates kilitli! Açmak için sağ tıkla.")
+		print("Domates kilitli! Açmak için sağ tıkla.")
 	else:
 		modulate = Color(1, 1, 1, 1)
 
@@ -47,17 +47,17 @@ func level_up():
 	if GameManager.score >= cost:
 		GameManager.score -= cost
 		level += 1
-		point = level * 5
+		point = level * 3 
 		update_visuals()
 		if level == 1:
 			timer.start()
-			print("Mısır açıldı! Üretim başladı.")
+			print("Domates açıldı! Üretim başladı.")
 		
-		print("Mısır Seviye Atladı! Seviye: ", level, " | Puan: ", point)
+		print("Domates Seviye Atladı! Seviye: ", level, " | Puan: ", point)
 	else:
-		print("Mısır için puan yetersiz! Gereken: ", cost)
+		print("Domates için puan yetersiz! Gereken: ", cost)
 
 func _on_timer_timeout():
 	if level > 0:
 		GameManager.score += point
-		print("Mısır puanı eklendi: +", point, " Toplam: ", GameManager.score)
+		print("Domates puanı eklendi: +", point, " Toplam: ", GameManager.score)
