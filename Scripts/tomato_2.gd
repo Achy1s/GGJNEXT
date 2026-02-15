@@ -67,7 +67,7 @@ func show_floating_point(amount: int):
 	var sprite = Sprite2D.new()
 	
 	# Texture'ı yükle
-	sprite.texture = load("res://art/puan_" + str(amount) + ".png")
+	sprite.texture = load("res://assets/puan_" + str(amount) + ".png")
 	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	add_child(sprite)
 	
