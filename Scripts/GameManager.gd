@@ -1,6 +1,6 @@
 extends Node
 
-var score: int = 1000 
+var score: int = 0
 var is_double_score: bool = false
 var bonus_timer: Timer
 var bonus_cost: int = 200

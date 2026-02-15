@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpfjv8pf3lpgn"]
+[gd_scene load_steps=19 format=3 uid="uid://dpfjv8pf3lpgn"]
 
 [ext_resource type="Script" uid="uid://182bmn31pv" path="res://Scripts/blueberry.gd" id="1_0l8em"]
 [ext_resource type="Texture2D" uid="uid://bdykhsnd3ogeb" path="res://assets/jars.png" id="2_5a6b4"]
 [ext_resource type="Texture2D" uid="uid://bnkxbcpdhdif7" path="res://assets/bush.png" id="2_bw5qf"]
 [ext_resource type="Texture2D" uid="uid://bln8u5a2r7ug1" path="res://assets/blueberrysaksi.png" id="3_ro10c"]
+[ext_resource type="Texture2D" uid="uid://ccre4pcqdwwet" path="res://assets/blueberry_pie_sprite_sheet.png" id="4_xge2c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_61hbj"]
 atlas = ExtResource("2_5a6b4")
@@ -24,6 +25,18 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_gtf2s"]
 atlas = ExtResource("3_ro10c")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncg43"]
+atlas = ExtResource("4_xge2c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7ydm"]
+atlas = ExtResource("4_xge2c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pyrp"]
+atlas = ExtResource("4_xge2c")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ro10c"]
 atlas = ExtResource("2_bw5qf")
@@ -64,9 +77,18 @@ animations = [{
 "name": &"kilitli",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncg43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7ydm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pyrp")
+}],
 "loop": true,
-"name": &"pancake",
+"name": &"pie",
 "speed": 5.0
 }, {
 "frames": [{
@@ -94,7 +116,8 @@ script = ExtResource("1_0l8em")
 texture_filter = 1
 position = Vector2(9, -5)
 sprite_frames = SubResource("SpriteFrames_0l8em")
-animation = &"kilitli"
+animation = &"pie"
+frame_progress = 0.8397466
 speed_scale = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

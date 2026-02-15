@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7y84xb3kj2q3"]
+[gd_scene load_steps=15 format=3 uid="uid://b7y84xb3kj2q3"]
 
 [ext_resource type="PackedScene" uid="uid://blqlfryyw3ur" path="res://tomato.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://d34x30g6oqny6" path="res://assets/map.png" id="1_hve3p"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://540wmymfje75" path="res://assets/golden_powerup.png" id="5_ryrav"]
 [ext_resource type="PackedScene" uid="uid://ua5fmr1kk2qa" path="res://corn.tscn" id="9_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://c47wwdflbquta" path="res://tomato_2.tscn" id="10_iotsf"]
+[ext_resource type="Texture2D" uid="uid://bgc7ucfnwre11" path="res://assets/ciftlikcoin.png" id="11_mfdv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
 atlas = ExtResource("1_hve3p")
@@ -55,10 +56,12 @@ scale = Vector2(5, 5)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 173.0
+offset_top = -1.0
+offset_right = 313.0
+offset_bottom = 136.0
 theme_override_font_sizes/font_size = 100
-text = "Puan: 0"
+text = "= 0"
 script = ExtResource("2_e2o6t")
 
 [node name="Powerup" type="Button" parent="UI"]
@@ -123,3 +126,9 @@ scale = Vector2(5, 5)
 [node name="corn2" parent="." instance=ExtResource("9_mfdv2")]
 position = Vector2(1624, 680)
 scale = Vector2(5, 5)
+
+[node name="Ciftlikcoin" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(90, 79)
+scale = Vector2(5, 5)
+texture = ExtResource("11_mfdv2")
