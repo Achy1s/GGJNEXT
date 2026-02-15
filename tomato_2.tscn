@@ -157,3 +157,4 @@ position = Vector2(9.5, -5.5)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_pakdt")
 animation = &"kilitli"
+speed_scale = 0.3

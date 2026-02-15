@@ -1,21 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7y84xb3kj2q3"]
+[gd_scene load_steps=14 format=3 uid="uid://b7y84xb3kj2q3"]
 
 [ext_resource type="PackedScene" uid="uid://blqlfryyw3ur" path="res://tomato.tscn" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://d34x30g6oqny6" path="res://assets/map.png" id="1_hve3p"]
 [ext_resource type="Script" uid="uid://3b81a4go33u3" path="res://Scripts/score_label.gd" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bhfhva0ur755x" path="res://potato.tscn" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://cbtrp4u5ag5lc" path="res://assets/cursor.png" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dpfjv8pf3lpgn" path="res://blueberry.tscn" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://cckdc0qp6rwoe" path="res://powerup.gd" id="5_eow3j"]
 [ext_resource type="Texture2D" uid="uid://540wmymfje75" path="res://assets/golden_powerup.png" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://ua5fmr1kk2qa" path="res://corn.tscn" id="9_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://c47wwdflbquta" path="res://tomato_2.tscn" id="10_iotsf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
+atlas = ExtResource("1_hve3p")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215e1"]
+atlas = ExtResource("1_hve3p")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eow3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215e1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(969, 542)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_eow3j")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
+
 [node name="Tomato" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(469.00003, 877)
+position = Vector2(683.00006, 866)
 scale = Vector2(5, 5)
 
 [node name="potato" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(209.00003, 875)
+position = Vector2(1009, 856)
 scale = Vector2(5, 5)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -34,11 +68,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -113.0
-offset_top = -113.0
+offset_left = -226.0
+offset_top = -109.0
+offset_right = -113.0
+offset_bottom = 4.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("4_fc0e3")
+icon = ExtResource("5_ryrav")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
@@ -52,18 +88,38 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -232.0
+offset_left = -114.0
 offset_top = -112.0
-offset_right = -119.0
+offset_right = -1.0
 offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("5_ryrav")
+icon = ExtResource("4_fc0e3")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="blueberry" parent="." instance=ExtResource("5_7jktm")]
-position = Vector2(707.00006, 888.00006)
+position = Vector2(1322.0001, 865.00006)
+scale = Vector2(5, 5)
+
+[node name="corn" parent="." instance=ExtResource("9_mfdv2")]
+position = Vector2(1624, 830)
+scale = Vector2(5, 5)
+
+[node name="Tomato2" parent="." instance=ExtResource("10_iotsf")]
+position = Vector2(683, 679)
+scale = Vector2(5, 5)
+
+[node name="potato2" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(1008.99994, 682)
+scale = Vector2(5, 5)
+
+[node name="blueberry2" parent="." instance=ExtResource("5_7jktm")]
+position = Vector2(1322, 668)
+scale = Vector2(5, 5)
+
+[node name="corn2" parent="." instance=ExtResource("9_mfdv2")]
+position = Vector2(1624, 680)
 scale = Vector2(5, 5)

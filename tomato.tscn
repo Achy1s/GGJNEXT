@@ -143,5 +143,5 @@ texture_filter = 1
 position = Vector2(9, -7)
 scale = Vector2(1.09375, 1.09375)
 sprite_frames = SubResource("SpriteFrames_hlhs2")
-animation = &"menemen"
+animation = &"tarla"
 speed_scale = 0.3

@@ -47,7 +47,7 @@ func level_up():
 	if GameManager.score >= cost:
 		GameManager.score -= cost
 		level += 1
-		point = level * 3 
+		point = (level * 2) - 1
 		update_visuals()
 		if level == 1:
 			timer.start()
@@ -59,9 +59,16 @@ func level_up():
 
 func _on_timer_timeout():
 	if level > 0:
-		GameManager.score += point
-		show_floating_point(point) # Bu satırı ekledik
-		print("Domates puanı eklendi: +", point, " Toplam: ", GameManager.score)
+		# YANLIŞ: GameManager.score += point (Bu bonusu görmezden gelir)
+		
+		# DOĞRU: Fonksiyonu çağırıyoruz ki bonus aktif mi kontrol etsin
+		GameManager.add_score(point)
+		
+		# Görsel efekt için bonuslu puanı hesaplayıp gösterelim
+		var _final_amount = point * 2 if GameManager.is_double_score else point
+		show_floating_point(point) 
+		
+		print("Domates üretimi yapıldı. Temel Puan: ", point)
 
 func show_floating_point(amount: int):
 	var sprite = Sprite2D.new()
