@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhfhva0ur755x"]
+[gd_scene load_steps=19 format=3 uid="uid://bhfhva0ur755x"]
 
 [ext_resource type="Script" uid="uid://ogri85xrmohf" path="res://Scripts/potato.gd" id="1_ybd78"]
 [ext_resource type="Texture2D" uid="uid://b3echpbimse4h" path="res://assets/kzartma.png" id="2_8dirm"]
 [ext_resource type="Texture2D" uid="uid://brqrpwofgwb78" path="res://assets/patates_sprite_sheet.png" id="2_ybd78"]
+[ext_resource type="Texture2D" uid="uid://14i8fhk2rdag" path="res://assets/patatessaksi.png" id="3_6f1xa"]
 [ext_resource type="Texture2D" uid="uid://cqasmnlaph4yu" path="res://assets/kumpir.png" id="4_6f1xa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bv5ge"]
@@ -21,8 +22,8 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_8dirm")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8dirm"]
-atlas = ExtResource("2_ybd78")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0klov"]
+atlas = ExtResource("3_6f1xa")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_up3yp"]
@@ -70,7 +71,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8dirm")
+"texture": SubResource("AtlasTexture_0klov")
 }],
 "loop": true,
 "name": &"kilitli",
