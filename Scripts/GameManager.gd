@@ -37,3 +37,11 @@ func add_score(amount: int):
 func _on_bonus_timer_timeout():
 	is_double_score = false
 	print("BONUS BİTTİ!")
+
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_P:
+		cheat_add_money(1000)
+
+func cheat_add_money(amount: int):
+	score += amount
+	print("HİLE AKTİF: ", amount, " puan eklendi. Yeni skor: ", score)

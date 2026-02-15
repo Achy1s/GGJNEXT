@@ -13,7 +13,7 @@ func get_level_up_cost() -> int:
 
 func get_click_upgrade_cost() -> int:
 	return 50 * click_level
-
+				
 func _ready():
 	update_visuals()
 	get_node("../UI/Button").pressed.connect(_on_upgrade_button_pressed)
